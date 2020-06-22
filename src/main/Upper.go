@@ -3,7 +3,7 @@ package main
 
 import "fmt"
 
-func main() {
+func Upper_main() {
 	x := "hello!" //此处定义了一个string类型的变量x，并赋值
 	for i := 0; i < len(x); i++ {
 		x := x[i] //此处又定义了一个作用域在for之内的变量x，
