@@ -35,7 +35,7 @@ func noTrap (){
 	fmt.Println(slice)
 }
 
-func main() {
+func Trap_main() {
 	//trap()
 	noTrap()
 }

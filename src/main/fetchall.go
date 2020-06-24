@@ -16,6 +16,7 @@ func fetch(url string, ch chan<- string) {
 	if err != nil {
 		ch <- fmt.Sprint(err)
 	}
+	defer res.Body.Close()
 	nbytes, err := io.Copy(ioutil.Discard, res.Body)
 	if err != nil {
 		ch <- fmt.Sprintf("while reading %s: %v", url, err)
@@ -26,7 +27,7 @@ func fetch(url string, ch chan<- string) {
 
 }
 
-func FetchAll_main() {
+func main() {
 	start := time.Now()
 	ch := make(chan string)
 	for _, url := range os.Args[1:] {

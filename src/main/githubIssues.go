@@ -22,7 +22,7 @@ func daysAgo(t time.Time) int {
 
 var report = template.Must(template.New("issuelist").Funcs(template.FuncMap{"daysAgo": daysAgo}).Parse(templ))
 
-func github_main() {
+func Github_main() {
 	result, err := github.SearchIssues(os.Args[1:])
 	if err != nil {
 		log.Fatal(err)
