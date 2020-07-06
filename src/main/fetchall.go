@@ -27,7 +27,7 @@ func fetch(url string, ch chan<- string) {
 
 }
 
-func main() {
+func Fetch_main() {
 	start := time.Now()
 	ch := make(chan string)
 	for _, url := range os.Args[1:] {
